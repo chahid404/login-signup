@@ -1,0 +1,403 @@
+/*importing Google font*/
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+/*Html rakup styling*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html
+{
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+/*Smartphone image*/
+img
+{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+/*link styling*/
+a
+{
+    text-decoration: none;
+}
+
+/*Logo styling*/
+h1
+{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+}
+
+/*body background color*/
+body
+{
+    background-color: #fafafa;
+}
+
+/*Wrapper is like a container of body*/
+#wrapper
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.container
+{
+    width: 100%;
+    max-width: 93.5rem;
+    margin: 3rem auto 0;
+}
+
+#wrapper > .container
+{
+    display: flex;
+    padding: 0 8rem;
+}
+
+
+/*form styling*/
+.form-data
+{
+    width: 100%;
+    max-width: 35rem;
+    margin-top: 3rem;
+}
+
+.form-data form
+{
+    background-color: #fff;
+    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+/*logo again styling*/
+.logo h1
+{
+    /*width: 17.5rem;*/
+    margin-bottom: 2.5rem;
+}
+
+/*form input styling*/
+.form-data form input
+{
+    padding: .8rem;
+    margin-bottom: .5rem;
+    border: 2px solid #eee;
+    border-radius: .4rem;
+}
+
+.form-btn
+{
+    margin: 1rem 0 1.5rem;
+    height: 3rem;
+    background-color: #3897f0;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+/*OR font styling*/
+.has-separator
+{
+    font-size: 1.3rem;
+    color: #999999;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.has-separator::before,
+.has-separator::after{
+    content: '';
+    position: absolute;
+    background-color: #eee;
+    width: 40%;
+    height: 1.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.has-separator::before
+{
+    left: 0;
+}
+
+.has-separator::after
+{
+    right: 0;
+}
+
+/*FACEBOOK ligin text styling*/
+.facebook-login
+{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #385185;
+    margin-bottom: 2.5rem;
+}
+
+.facebook-login
+{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #385185;
+    margin-bottom: 2.5rem;
+}
+
+.facebook-login i
+{
+    font-size: 2rem;
+    margin-right: .7rem;
+}
+
+/*password reset styling*/
+.password-reset
+{
+    font-size: 1.5rem;
+    color: #003569;
+}
+
+/*signup text styling*/
+.sign-up
+{
+    text-align: center;
+    font-size: 1.4rem;
+    color: #262626;
+    padding: 2rem 0;
+    background-color: #fff;
+    border: 2px solid #eee;
+    margin: 1rem 0;
+}
+
+.sign-up
+{
+    text-align: center;
+    font-size: 1.4rem;
+    color: #262626;
+    padding: 2rem 0;
+    background-color: #fff;
+    border: 2px solid #eee;
+    margin: 1rem 0;
+}
+
+.sign-up a
+{
+    color: #3897f0;
+    font-weight: bold;
+}
+
+/*Play stor and App store image styling*/
+.get-the-app
+{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.get-the-app span
+{
+    display: block;
+    margin: 2rem 0;
+    color: #262626;
+}
+
+.badge
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.badge img
+{
+    max-width: 14rem;
+    cursor: pointer;
+}
+
+.badge img:first-child
+{
+    margin-right: 1rem;
+}
+
+/*Footer link styling*/
+footer
+{
+    padding: 5rem 0;
+}
+
+footer .container
+{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.footer-nav ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.footer-nav ul li
+{
+    margin-right: 1.6rem;
+}
+
+.footer-nav ul li a
+{
+    color: #003569;
+}
+
+.copyright-notice
+{
+    color: #999999;
+}
+
+/*responsive styling*/
+@media (max-width: 900px)
+{
+    .phone-app-demo{
+        display: none;
+    }
+
+    .form-data
+    {
+        margin: 0 auto;
+    }
+
+    #wrapper > .container
+    {
+        padding: 0;
+    }
+
+    footer .container
+    {
+        padding: 0 2rem;
+        justify-content: center;
+    }
+
+    .footer-nav ul
+    {
+        justify-content: center;
+    }
+
+    .footer-nav ul li
+    {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 450px)
+{
+    #wrapper
+    {
+        padding-top: 0;
+    }
+    .form-data form
+    {
+        background-color: transparent;
+        border: none;
+        padding: 0 2rem;
+    }
+    .sign-up
+    {
+        background-color: transparent;
+        border: none;
+        margin: 4rem 0;
+    }
+    footer
+    {
+        padding-bottom: 2rem;
+    }
+}
+
+/* ############# button fb+google ####### */
+
+
+/* Shared */
+.loginBtn {
+    box-sizing: border-box;
+    position: relative;
+    /* width: 13em;  - apply for fixed size */
+    margin: 0.2em;
+    padding: 0 15px 0 46px;
+    border: none;
+    text-align: left;
+    line-height: 34px;
+    white-space: nowrap;
+    border-radius: 0.2em;
+    font-size: 16px;
+    color: #FFF;
+  }
+  .loginBtn:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 100%;
+  }
+  .loginBtn:focus {
+    outline: none;
+  }
+  .loginBtn:active {
+    box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+  }
+  
+  
+  /* Facebook */
+  .loginBtn--facebook {
+    background-color: #4C69BA;
+    background-image: linear-gradient(#4C69BA, #3B55A0);
+    /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+    text-shadow: 0 -1px 0 #354C8C;
+  }
+  .loginBtn--facebook:before {
+    border-right: #364e92 1px solid;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+  }
+  .loginBtn--facebook:hover,
+  .loginBtn--facebook:focus {
+    background-color: #5B7BD5;
+    background-image: linear-gradient(#5B7BD5, #4864B1);
+  }
+  
+  
+  /* Google */
+  .loginBtn--google {
+    /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+    background: #DD4B39;
+    
+  }
+  .loginBtn--google:before {
+    border-right: #BB3F30 1px solid;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+  }
+  .loginBtn--google:hover,
+  .loginBtn--google:focus {
+    background: #E74B37;
+  }
