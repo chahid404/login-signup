@@ -1,9 +1,7 @@
 /*importing Google font*/
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
-.navbar {
-    /* margin-bottom: 1.5rem; */
-}
+
 .logo
 {
     font-family: 'Pacifico', cursive;
@@ -27,6 +25,9 @@ hr.style13 {
     margin-bottom: 1rem;
 }
 
+.centerelement{
+    position: relative;
+}
 
 /*
 *
