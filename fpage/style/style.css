@@ -121,3 +121,9 @@ hr.style13 {
     border-top: 2px solid #999;
     color: black;
 }
+
+
+.spacejustified {
+  display: flex;
+  justify-content: space-between; 
+}
