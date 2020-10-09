@@ -7,8 +7,8 @@ function profile() {
             <nav className="navbar navbar-expand-lg navbar-light bg-light main-navigation">
                 <a className="logo navbar-brand" href="#">
                     <img src="img/unnamed.png" width={30} height={30} className="d-inline-block align-top" alt="" />
-              Our-App
-            </a>
+            Our-App
+          </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
@@ -34,9 +34,22 @@ function profile() {
                 <div className="card-header">
                     <h5>Your Account</h5>
                 </div>
-                <div className="card-body">
-                    <h5 className="card-title">Email : test123@gmail.com</h5>
-                    <h5 className="card-title">Statu : NOT CONFIRMED</h5>
+                <div className="card-body getpointsul">
+                    <table className="table">
+                        <tbody><tr className="cardtd">
+                            <td><i className="fas fa-user fa-4x" /></td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    test123@gmail.com
+                  </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span className="badge badge-danger">NOT CONFIRMED</span>
+                                </td>
+                            </tr>
+                        </tbody></table>
                 </div>
                 <div className="card-footer text-muted">
                     <a href="#" className="btn btn-primary">Resend</a>
@@ -51,7 +64,7 @@ function profile() {
                     <div className="dropdown">
                         <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             English
-                </button>
+              </button>
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a className="dropdown-item" href="#">English</a>
                             <a className="dropdown-item" href="#">Franche</a>
@@ -69,24 +82,25 @@ function profile() {
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#" className="text-dark badge badge-light extra">
                                 <img src="img/20.png" width={37} height={37} className="rounded-circle" alt="" /> 20-08-2020
-                  </a>
+                </a>
                             <span className="badge badge-danger">DENIED</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#" className="text-dark badge badge-light extra">
                                 <img src="img/5.png" width={37} height={37} className="rounded-circle" alt="" /> 01-08-2020
-                  </a>
+                </a>
                             <span className="badge badge-success">SENT</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#" className="text-dark badge badge-light extra">
                                 <img src="img/10.png" width={37} height={37} className="rounded-circle" alt="" /> 03-08-2020
-                  </a>
+                </a>
                             <span className="badge badge-warning">WAITING</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+
     );
 }

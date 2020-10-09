@@ -41,3 +41,12 @@
 .modaldiv2{
     padding-bottom: 10px;
 }
+
+.maring4zero{
+    margin: 0 0 0 0;
+}
+
+.table td{
+    padding: 12px 3px 3px 3px;
+    border-top: 1px solid white;
+}
