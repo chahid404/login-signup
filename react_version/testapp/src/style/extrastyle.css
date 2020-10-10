@@ -50,3 +50,25 @@
     padding: 12px 3px 3px 3px;
     border-top: 1px solid white;
 }
+
+.spaninvi{
+    color: blue;
+}
+
+.cardreward{
+    padding: 20px 5px 20px 5px;
+}
+
+.lireward{
+    padding-left: 2%;
+}
+.frodiv{
+    width: 50%;
+}
+
+.h6modal{
+    font-weight: bold;
+}
+.pmodal{
+    font-size: 85%; text-align: center;
+}
