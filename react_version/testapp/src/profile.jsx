@@ -100,6 +100,56 @@ function profile() {
                     </ul>
                 </div>
             </div>
+
+
+
+
+
+            // #################completed offers#####################
+
+
+            <div className="card text-center">
+                <div className="card-header">
+                    <h5>Completed Offers</h5>
+                </div>
+                <div className="card-body getpointsdiv">
+                    <ul className="list-group getpointsul">
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            <div className="d-flex flex-row">
+                                <img src="img/reward.png" width={45} height={45} className="rounded-circle" alt="" />
+                                <div className="d-flex flex-column pl-2">
+                                    <span><h6>Offer Name 1</h6> </span>
+                                    <span className="text-secondary">03-08-2020</span>
+                                </div>
+                            </div>
+                            <span className="badge badge-success">+1200p</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            <div className="d-flex flex-row">
+                                <img src="img/reward.png" width={45} height={45} className="rounded-circle" alt="" />
+                                <div className="d-flex flex-column pl-2">
+                                    <span><h6>Offer Name 2</h6> </span>
+                                    <span className="text-secondary">03-08-2020</span>
+                                </div>
+                            </div>
+                            <span className="badge badge-success">+1200p</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                            <div className="d-flex flex-row">
+                                <img src="img/reward.png" width={45} height={45} className="rounded-circle" alt="" />
+                                <div className="d-flex flex-column pl-2">
+                                    <span><h6>Offer Name 3</h6> </span>
+                                    <span className="text-secondary">03-08-2020</span>
+                                </div>
+                            </div>
+                            <span className="badge badge-success">+1200p</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            
         </div>
 
     );
