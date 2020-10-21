@@ -37,20 +37,19 @@ export function CustomerDeleteDialog({ id, show, onHide }) {
       {/*end::Loading*/}
       <Modal.Header closeButton>
         <Modal.Title id="example-modal-sizes-title-lg">
-          Customer Delete
+          Balonce
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {!isLoading && (
-          <span>Are you sure to permanently delete this customer?</span>
-        )}
-        {isLoading && <span>Customer is deleting...</span>}
+        <h1>
+          User Details
+  </h1>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Email</th>
-              <th>From FB</th>
+              <th>Email </th>
               <th>From GPLUS</th>
+              <th>From FB</th>
               <th>Created At</th>
             </tr>
           </thead>
@@ -69,18 +68,19 @@ export function CustomerDeleteDialog({ id, show, onHide }) {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Network Size</th>
-              <th>Valideted Referrels</th>
-              <th>Network Revenue</th>
               <th>Device Class</th>
+              <th>Network Size</th>
+              <th>Network Revenue</th>
+              <th>Valideted Referrels</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
               <td>Android</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+
             </tr>
           </tbody>
         </Table>
@@ -89,17 +89,22 @@ export function CustomerDeleteDialog({ id, show, onHide }) {
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Geo</th>
               <th>IP</th>
+              <th>Geo</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Us</td>
+
               <td>45az4e5za4e5a</td>
+              <td>Us</td>
             </tr>
           </tbody>
         </Table>
+
+
+        <h1>User Amount Details</h1>
+
 
         <Table striped bordered hover size="sm">
           <thead>
@@ -107,11 +112,11 @@ export function CustomerDeleteDialog({ id, show, onHide }) {
               <th>#</th>
               <th>Action</th>
               <th>Amount</th>
-              <th>Info</th>
               <th>CreditAfter</th>
               <th>BonusAfter</th>
+              <th>Info</th>
               <th>CreatedAt</th>
-              
+
             </tr>
           </thead>
           <tbody>
@@ -119,11 +124,12 @@ export function CustomerDeleteDialog({ id, show, onHide }) {
               <td>11</td>
               <td>bonus</td>
               <td>0.004</td>
-              <td>dailybonus</td>
               <td>0348</td>
               <td>00000</td>
+              <td>dailybonus</td>
+
               <td>22/22/15151</td>
-              
+
             </tr>
           </tbody>
         </Table>
