@@ -6,7 +6,7 @@ import { ModalProgressBar } from "../../../../../../_metronic/_partials/controls
 import * as actions from "../../../_redux/products/productsActions";
 import { useProductsUIContext } from "../ProductsUIContext";
 
-export function ProductDeleteDialog({ id, show, onHide }) {
+export function ProductDetailsDialog({ id, show, onHide }) {
   // Products UI Context
   const productsUIContext = useProductsUIContext();
   const productsUIProps = useMemo(() => {
@@ -55,14 +55,14 @@ export function ProductDeleteDialog({ id, show, onHide }) {
       {isLoading && <ModalProgressBar variant="query" />}
       <Modal.Header closeButton>
         <Modal.Title id="example-modal-sizes-title-lg">
-          Cancel Reward
+          Product Delete
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {!isLoading && (
-          <span>would you like to cancel ...  for reciver xxxxx@gmail.com</span>
+          <span>Are you sure to permanently delete this product?</span>
         )}
-        {isLoading && <span>Reward is canceling...</span>}
+        {isLoading && <span>Product is deleting...</span>}
       </Modal.Body>
       <Modal.Footer>
         <div>
@@ -71,7 +71,7 @@ export function ProductDeleteDialog({ id, show, onHide }) {
             onClick={onHide}
             className="btn btn-light btn-elevate"
           >
-            close
+            Cancel
           </button>
           <> </>
           <button
@@ -79,7 +79,7 @@ export function ProductDeleteDialog({ id, show, onHide }) {
             onClick={deleteProduct}
             className="btn btn-delete btn-elevate"
           >
-            cancel
+            Delete
           </button>
         </div>
       </Modal.Footer>

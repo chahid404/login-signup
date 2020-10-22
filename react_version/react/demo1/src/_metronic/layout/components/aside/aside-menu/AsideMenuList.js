@@ -111,7 +111,7 @@ export function AsideMenuList({ layoutProps }) {
                   <i className="menu-bullet menu-bullet-dot">
                     <span />
                   </i>
-                  <span className="menu-text">Products</span>
+                  <span className="menu-text">Reward list</span>
                 </NavLink>
               </li>
               {/*end::2 Level*/}

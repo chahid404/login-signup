@@ -57,14 +57,14 @@ export function ProductsDeleteDialog({ show, onHide }) {
       {isLoading && <ModalProgressBar />}
       <Modal.Header closeButton>
         <Modal.Title id="example-modal-sizes-title-lg">
-          Products Delete
+          Cancel Reward
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {!isLoading && (
-          <span>Are you sure to permanently delete selected products?</span>
+          <span>would you like to cancel 5$ .... for reciver xxx@gmail.com</span>
         )}
-        {isLoading && <span>Products are deleting...</span>}
+        {isLoading && <span>Reward are canceling...</span>}
       </Modal.Body>
       <Modal.Footer>
         <div>
@@ -73,7 +73,7 @@ export function ProductsDeleteDialog({ show, onHide }) {
             onClick={onHide}
             className="btn btn-light btn-elevate"
           >
-            Cancel
+            close
           </button>
           <> </>
           <button
@@ -81,7 +81,7 @@ export function ProductsDeleteDialog({ show, onHide }) {
             onClick={deleteProducts}
             className="btn btn-primary btn-elevate"
           >
-            Delete
+            Cancel
           </button>
         </div>
       </Modal.Footer>

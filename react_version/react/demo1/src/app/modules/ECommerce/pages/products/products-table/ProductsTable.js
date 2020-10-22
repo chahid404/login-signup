@@ -31,6 +31,7 @@ export function ProductsTable() {
       setQueryParams: productsUIContext.setQueryParams,
       openEditProductPage: productsUIContext.openEditProductPage,
       openDeleteProductDialog: productsUIContext.openDeleteProductDialog,
+      openDetailsProductDialog: productsUIContext.openDetailsProductDialog,
     };
   }, [productsUIContext]);
 
@@ -53,55 +54,41 @@ export function ProductsTable() {
   const columns = [
     {
       dataField: "VINCode",
-      text: "VIN Code (ID)",
+      text: "User",
       sort: true,
       sortCaret: sortCaret,
     },
     {
       dataField: "manufacture",
-      text: "Manufacture",
+      text: "Receiver Email",
       sort: true,
       sortCaret: sortCaret,
     },
     {
       dataField: "model",
-      text: "Model",
+      text: "Requested Reward",
       sort: true,
       sortCaret: sortCaret,
     },
     {
       dataField: "modelYear",
-      text: "Model Year",
+      text: "Country",
       sort: true,
       sortCaret: sortCaret,
     },
     {
       dataField: "color",
-      text: "Color",
+      text: "Extra Info",
       sort: true,
       sortCaret: sortCaret,
       formatter: columnFormatters.ColorColumnFormatter,
     },
     {
       dataField: "price",
-      text: "Price",
+      text: "Created At",
       sort: true,
       sortCaret: sortCaret,
       formatter: columnFormatters.PriceColumnFormatter,
-    },
-    {
-      dataField: "status",
-      text: "Status",
-      sort: true,
-      sortCaret: sortCaret,
-      formatter: columnFormatters.StatusColumnFormatter,
-    },
-    {
-      dataField: "condition",
-      text: "Condition",
-      sort: true,
-      sortCaret: sortCaret,
-      formatter: columnFormatters.ConditionColumnFormatter,
     },
     {
       dataField: "action",
@@ -110,11 +97,12 @@ export function ProductsTable() {
       formatExtraData: {
         openEditProductPage: productsUIProps.openEditProductPage,
         openDeleteProductDialog: productsUIProps.openDeleteProductDialog,
+        openDetailsProductDialog : productsUIProps.openDetailsProductDialog,
       },
       classes: "text-right pr-0",
       headerClasses: "text-right pr-3",
       style: {
-        minWidth: "100px",
+        minWidth: "150px",
       },
     },
   ];

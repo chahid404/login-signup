@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { ProductsLoadingDialog } from "./products-loading-dialog/ProductsLoadingDialog";
 import { ProductDeleteDialog } from "./product-delete-dialog/ProductDeleteDialog";
+import { ProductDetailsDialog } from "./product-details-dialog/ProductDetailsDialog";
 import { ProductsDeleteDialog } from "./products-delete-dialog/ProductsDeleteDialog";
 import { ProductsFetchDialog } from "./products-fetch-dialog/ProductsFetchDialog";
 import { ProductsUpdateStatusDialog } from "./products-update-status-dialog/ProductsUpdateStatusDialog";
@@ -18,6 +19,9 @@ export function ProductsPage({ history }) {
     },
     openDeleteProductDialog: (id) => {
       history.push(`/e-commerce/products/${id}/delete`);
+    },
+    openDetailsProductDialog: (id) => {
+      history.push(`/e-commerce/products/${id}/detail`);
     },
     openDeleteProductsDialog: () => {
       history.push(`/e-commerce/products/deleteProducts`);
@@ -46,6 +50,17 @@ export function ProductsPage({ history }) {
       <Route path="/e-commerce/products/:id/delete">
         {({ history, match }) => (
           <ProductDeleteDialog
+            show={match != null}
+            id={match && match.params.id}
+            onHide={() => {
+              history.push("/e-commerce/products");
+            }}
+          />
+        )}
+      </Route>
+      <Route path="/e-commerce/products/:id/detail">
+        {({ history, match }) => (
+          <ProductDetailsDialog
             show={match != null}
             id={match && match.params.id}
             onHide={() => {
