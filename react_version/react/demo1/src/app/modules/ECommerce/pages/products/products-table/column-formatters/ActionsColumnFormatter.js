@@ -1,6 +1,7 @@
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid */
 import React ,{useState} from "react";
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
+import Ckeditor from './Ckeditor';
 import { OverlayTrigger, Tooltip ,Button ,Modal  } from "react-bootstrap";
 import SVG from "react-inlinesvg";
 import { toAbsoluteUrl } from "../../../../../../../_metronic/_helpers";
@@ -25,7 +26,10 @@ function Example() {
         </a>
       
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
         <Modal.Header closeButton>
           <Modal.Title>Send Reward ...</Modal.Title>
         </Modal.Header>
@@ -122,7 +126,7 @@ function Example() {
             </tr>
           </tbody>
         </Table>
-
+        <Ckeditor/>
 
       </Modal.Body>
         <Modal.Footer>
@@ -139,7 +143,7 @@ export const ActionsColumnFormatter = (
   cellContent,
   row,
   rowIndex,
-  { openEditProductPage, openDeleteProductDialog,openDetailsProductDialog }
+  { openEditProductPage, openDeleteProductDialog }
 ) => (
     <>
       <OverlayTrigger
@@ -174,6 +178,8 @@ export const ActionsColumnFormatter = (
       <OverlayTrigger
         overlay={<Tooltip id="products-details-tooltip">Details user</Tooltip>}
       >
+
+      
         <Example />
       </OverlayTrigger>
     </>

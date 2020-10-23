@@ -1,179 +1,93 @@
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid,jsx-a11y/role-supports-aria-props */
-import React, { useEffect, useState, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { shallowEqual, useSelector } from "react-redux";
-import * as actions from "../../../_redux/products/productsActions";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardHeaderToolbar,
-} from "../../../../../../_metronic/_partials/controls";
-import { ProductEditForm } from "./ProductEditForm";
-import { Specifications } from "../product-specifications/Specifications";
-import { SpecificationsUIProvider } from "../product-specifications/SpecificationsUIContext";
+
 import { useSubheader } from "../../../../../../_metronic/layout";
-import { ModalProgressBar } from "../../../../../../_metronic/_partials/controls";
-import { RemarksUIProvider } from "../product-remarks/RemarksUIContext";
-import { Remarks } from "../product-remarks/Remarks";
+import React from "react";
+import { Card, Button, Form, Row, Col } from "react-bootstrap";
+import Ckeditor from '../products-table/column-formatters/Ckeditor';
 
-const initProduct = {
-  id: undefined,
-  model: "",
-  manufacture: "Pontiac",
-  modelYear: 2020,
-  mileage: 0,
-  description: "",
-  color: "Red",
-  price: 10000,
-  condition: 1,
-  status: 0,
-  VINCode: "",
-};
-
-export function ProductEdit({
-  history,
-  match: {
-    params: { id },
-  },
-}) {
-  // Subheader
+export const ProductEdit = () => {
   const suhbeader = useSubheader();
+  suhbeader.setTitle("Pay");
 
-  // Tabs
-  const [tab, setTab] = useState("basic");
-  const [title, setTitle] = useState("");
-  const dispatch = useDispatch();
-  // const layoutDispatch = useContext(LayoutContext.Dispatch);
-  const { actionsLoading, productForEdit } = useSelector(
-    (state) => ({
-      actionsLoading: state.products.actionsLoading,
-      productForEdit: state.products.productForEdit,
-    }),
-    shallowEqual
-  );
 
-  useEffect(() => {
-    dispatch(actions.fetchProduct(id));
-  }, [id, dispatch]);
+  return (<><Card>
+    <Card.Body>
+      <Card.Title>Send reward 5 $ gift Card</Card.Title>
+      <Form>
+        <Row>
+          <Col>
+            <Form.Group controlId="formBasicCheckbox ml-3">
+              <Form.Check type="checkbox" label="Use Code From stock(0 available)" />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form.Group >
+              <Form.Label>Code</Form.Label>
+              <Form.Control type="text" placeholder="aze1-ezre5-zeze-gggr" />
+              <Form.Text className="text-muted">
+                Gift Card Code
+    </Form.Text>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group >
+              <Form.Label>Reward</Form.Label>
+              <Form.Control type="text" placeholder="10$ amazon gift card" />
+              <Form.Text className="text-muted">
+                Reward Name
+    </Form.Text>
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form.Label><h5>Extra Info</h5></Form.Label>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Form.Group controlId="formBasicCheckbox ml-3">
+            <Form.Label className="text-muted">loving every minute of it </Form.Label>
+              <Form.Check type="checkbox" label="Send email with Card" />
+            </Form.Group>
+          </Col>
 
-  useEffect(() => {
-    let _title = id ? "" : "New Product";
-    if (productForEdit && id) {
-      _title = `Edit product '${productForEdit.manufacture} ${productForEdit.model} - ${productForEdit.modelYear}'`;
-    }
+        </Row>
 
-    setTitle(_title);
-    suhbeader.setTitle(_title);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [productForEdit, id]);
+        <Row>
+          <Col>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="aze1-ezre5-zeze-gggr" value ="chahid404@gmail.com" />
+              <Form.Text className="text-muted">
+                Email recever
+    </Form.Text>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group >
+              <Form.Label>Subject</Form.Label>
+              <Form.Control type="text" placeholder="Reward title" value= "Your Reward Is Here !" />
+              <Form.Text className="text-muted">
+                Reward Name
+    </Form.Text>
+            </Form.Group>
+          </Col>
+        </Row>
+      <Row>
+        <Col>
+          <Ckeditor/>
+        </Col>
+      </Row>
 
-  const saveProduct = (values) => {
-    if (!id) {
-      dispatch(actions.createProduct(values)).then(() => backToProductsList());
-    } else {
-      dispatch(actions.updateProduct(values)).then(() => backToProductsList());
-    }
-  };
+        <Button variant="primary" type="submit">
+          Pay Reawrd
+  </Button>
+        <Button variant="secondry">Cancel</Button>
+      </Form>
 
-  const btnRef = useRef();  
-  const saveProductClick = () => {
-    if (btnRef && btnRef.current) {
-      btnRef.current.click();
-    }
-  };
-
-  const backToProductsList = () => {
-    history.push(`/e-commerce/products`);
-  };
-
-  return (
-    <Card>
-      {actionsLoading && <ModalProgressBar />}
-      <CardHeader title={title}>
-        <CardHeaderToolbar>
-          <button
-            type="button"
-            onClick={backToProductsList}
-            className="btn btn-light"
-          >
-            <i className="fa fa-arrow-left"></i>
-            Back
-          </button>
-          {`  `}
-          <button className="btn btn-light ml-2">
-            <i className="fa fa-redo"></i>
-            Reset
-          </button>
-          {`  `}
-          <button
-            type="submit"
-            className="btn btn-primary ml-2"
-            onClick={saveProductClick}
-          >
-            Save
-          </button>
-        </CardHeaderToolbar>
-      </CardHeader>
-      <CardBody>
-        <ul className="nav nav-tabs nav-tabs-line " role="tablist">
-          <li className="nav-item" onClick={() => setTab("basic")}>
-            <a
-              className={`nav-link ${tab === "basic" && "active"}`}
-              data-toggle="tab"
-              role="tab"
-              aria-selected={(tab === "basic").toString()}
-            >
-              Basic info
-            </a>
-          </li>
-          {id && (
-            <>
-              {" "}
-              <li className="nav-item" onClick={() => setTab("remarks")}>
-                <a
-                  className={`nav-link ${tab === "remarks" && "active"}`}
-                  data-toggle="tab"
-                  role="button"
-                  aria-selected={(tab === "remarks").toString()}
-                >
-                  Product remarks
-                </a>
-              </li>
-              <li className="nav-item" onClick={() => setTab("specs")}>
-                <a
-                  className={`nav-link ${tab === "specs" && "active"}`}
-                  data-toggle="tab"
-                  role="tab"
-                  aria-selected={(tab === "specs").toString()}
-                >
-                  Product specifications
-                </a>
-              </li>
-            </>
-          )}
-        </ul>
-        <div className="mt-5">
-          {tab === "basic" && (
-            <ProductEditForm
-              actionsLoading={actionsLoading}
-              product={productForEdit || initProduct}
-              btnRef={btnRef}
-              saveProduct={saveProduct}
-            />
-          )}
-          {tab === "remarks" && id && (
-            <RemarksUIProvider currentProductId={id}>
-              <Remarks />
-            </RemarksUIProvider>
-          )}
-          {tab === "specs" && id && (
-            <SpecificationsUIProvider currentProductId={id}>
-              <Specifications />
-            </SpecificationsUIProvider>
-          )}
-        </div>
-      </CardBody>
-    </Card>
-  );
-}
+    </Card.Body>
+  </Card></>);
+};
