@@ -7,7 +7,7 @@ import Ckeditor from '../products-table/column-formatters/Ckeditor';
 
 export const ProductEdit = () => {
   const suhbeader = useSubheader();
-  suhbeader.setTitle("Pay");
+  suhbeader.setTitle("Pay Reward");
 
 
   return (<><Card>
