@@ -7,7 +7,9 @@ import { Modal } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import {
-  Input
+  Input,
+  Select,
+  DatePickerField,
 } from "../../../../../../_metronic/_partials/controls";
 
 // Validation schema
@@ -56,35 +58,77 @@ export function CustomerEditForm({
               )}
               <Form className="form form-label-right">
                 <div className="form-group row">
-                {/* Shared Key */}
-                <div className="col-lg-4">
+                  {/* First Name */}
+                  <div className="col-lg-4">
+                    <Field
+                      name="firstName"
+                      component={Input}
+                      placeholder="Enter First Name"
+                      label="First Name"
+                    />
+                  </div>
+                  {/* Last Name */}
+                  <div className="col-lg-4">
                     <Field
                       name="lastName"
                       component={Input}
-                      placeholder="Last Name"
-                      label="Shared Key"
+                      placeholder="Enter Last Name"
+                      label="Last Name"
                     />
                   </div>
-
-                  {/* network */}
+                  {/* Login */}
                   <div className="col-lg-4">
                     <Field
-                      name="network"
+                      name="userName"
                       component={Input}
-                      placeholder="25"
-                      label="network"
-                      type="number"
+                      placeholder="Login"
+                      label="Login"
                     />
                   </div>
-                  {/* add to credit */}
+                </div>
+                {/* Email */}
+                <div className="form-group row">
                   <div className="col-lg-4">
                     <Field
-                      name="credit"
+                      type="email"
+                      name="email"
                       component={Input}
-                      placeholder="0.01"
-                      label="Add to credit"
-                      type="number"
+                      placeholder="Email"
+                      label="Email"
                     />
+                  </div>
+                  {/* Date of birth */}
+                  <div className="col-lg-4">
+                    <DatePickerField
+                      name="dateOfBbirth"
+                      label="Date of Birth"
+                    />
+                  </div>
+                  {/* IP Address */}
+                  <div className="col-lg-4">
+                    <Field
+                      name="ipAddress"
+                      component={Input}
+                      placeholder="IP Address"
+                      label="IP Address"
+                      customFeedbackLabel="We'll never share customer IP Address with anyone else"
+                    />
+                  </div>
+                </div>
+                <div className="form-group row">
+                  {/* Gender */}
+                  <div className="col-lg-4">
+                    <Select name="Gender" label="Gender">
+                      <option value="Female">Female</option>
+                      <option value="Male">Male</option>
+                    </Select>
+                  </div>
+                  {/* Type */}
+                  <div className="col-lg-4">
+                    <Select name="type" label="Type">
+                      <option value="0">Business</option>
+                      <option value="1">Individual</option>
+                    </Select>
                   </div>
                 </div>
               </Form>

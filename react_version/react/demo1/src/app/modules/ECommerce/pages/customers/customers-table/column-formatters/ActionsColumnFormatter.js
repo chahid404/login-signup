@@ -32,7 +32,7 @@ export function ActionsColumnFormatter(
         onClick={() => openDeleteCustomerDialog(row.id)}
       >
         <span className="svg-icon svg-icon-md svg-icon-danger">
-          <SVG src={toAbsoluteUrl("/media/svg/icons/General/Other1.svg")} />
+          <SVG src={toAbsoluteUrl("/media/svg/icons/General/Trash.svg")} />
         </span>
       </a>
     </>
